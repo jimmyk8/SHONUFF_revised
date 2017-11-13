@@ -20,7 +20,7 @@
 
 	.back li, p, a {
 		font-family: 'Montserrat', sans-serif;
-		font-size: 1rem;
+		font-size: 1.15rem;
 		color: #FDFEFF;
 		text-shadow: 1px 1px 1px rgb(0, 0, 0);
 	}
@@ -102,9 +102,9 @@
 	#bio p {
 		margin: auto;
 		max-width: 85%;
-		background-color: #322d2d;
 		padding: 3rem;
-		box-shadow: inset 0px 10px 10px 10px #000000;
+		/*box-shadow: inset 0px 10px 10px 10px #000000;
+		background-color: #322d2d;*/
 	}
 
 	.morecontent span {
@@ -128,7 +128,7 @@
 	}
 
 	.flip3D {
-		margin-left: 3rem;
+		margin-left: 2rem;
 		display: grid;
 		grid-template-columns: 2fr;
 		min-width: 75%;
@@ -136,26 +136,15 @@
 
 
 	.front {
-		-webkit-animation: fadein 1.5s; /* Safari and Chrome */
-	    -moz-animation: fadein 1.5s; /* Firefox */
-	    -ms-animation: fadein 1.5s; /* Internet Explorer */
-	    -o-animation: fadein 1.5s; /* Opera */
 		margin-left: 1rem;
 		max-width: 90%;
 		margin-top: 2rem;
 		margin-bottom: 1.5rem;
 		position: relative;
-		transition-property: z-index, opacity;
-		transition-duration: 1.5s;
-		transition-style; ease-in;
+		transition: z-index, opacity 1.5s ease-out;
 	}
 
 	.back {
-		-webkit-animation: fadein 1.5s; /* Safari and Chrome */
-	    -moz-animation: fadein 1.5s; /* Firefox */
-	    -ms-animation: fadein 1.5s; /* Internet Explorer */
-	    -o-animation: fadein 1.5s; /* Opera */
-	    animation: fadein 1.5s;
 	    opacity: 0;
 	    width: 31%;
 	    max-width: 90%;
@@ -170,8 +159,7 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		border: 30px solid rgba(119, 164, 186, .25);
-		transition-property: z-index, opacity ease-in;
-		transition-duration: 1.5s;
+		transition: z-index, opacity 1.5s ease-in;
 	}
 
 	.rounded, .back {
@@ -231,16 +219,14 @@
 
 	.col-sm-6 h3, .col-sm-6 h4{
 		margin-bottom: -2rem;
-		color: ;
+		color: #FDFEFF;
 	}
 
 	.col-sm-6 p{
 		line-height: .75rem;
 		opacity: .05;
 		width: 10rem;
-		transition: opacity, line-height, transform;
-		transition-duration: 1.5s;
-		transition-style; ease-in;
+		transition: opacity, line-height, transform 1.5s ease-in;
 	}
 
 	.col-sm-6 h3, .col-sm-6 h4{
@@ -257,9 +243,7 @@
 		transform: scale(.75);
 		width: 20%;
 		height: auto;
-		transition-property: opacity, transform;
-		transition-duration: 1.5s;
-		transition-style; ease-in;
+		transition: opacity, line-height, transform 1.5s ease-in;
 	}
 
 	.photo:hover {
@@ -331,8 +315,7 @@
 
 #footer {
 	left: 0;
-	width: 100%
-
+	width: 100%;
 	z-index: -100;
 	bottom: 0;
 	max-height: 160px;
@@ -636,9 +619,9 @@
 			transform-origin: -30% -350%;
 		}
 
-		#members:nth-of-child(2) p{
+		/*#members:nth-of-child(2) p{
 			margin-top: 13rem;
-		}
+		}*/
 
 		.col-sm-6 img {
 			transform: scale(1.15);
@@ -658,28 +641,16 @@
 	.col-2{
 		margin-right: 10rem;
 	}
-}
-
-
-/*******************************************sceen size*****************************/
-
-
-@media (max-width: 800px) {
-  * {
-
-  }
-}
 
 
 
-
-
-
+/*******************************************small screen size*****************************/
 
 
 @media only screen and (max-width: 700px) {
 	body {
-		margin: auto;
+		max-width: 400px;
+		margin-left: 0;
 		background-image: none;
 		background-color: black;
 		grid-template-columns: repeat(1, 2fr);
@@ -696,34 +667,54 @@
 						   "footer";
 	}
 
+	.a2a_kit {
+		visibility: hidden;
+		display: none;
+	}
+
+	.col-lg-12 {
+
+		max-width: 350px;
+	}
+
 	.btn-group-justified {
-		position: sticky;
+		width: 93%;
+		margin-left: 0;
+		max-height: 250px;
+		position: static;
 	}
 
 	.nav-tabs{
-		display: block;
-		margin:auto;
-		padding-right: 2rem;
-		padding-bottom: .75rem;
-		margin-right: 6rem;
+		grid-gap: .5rem;
+		margin-left: -2rem;
 		background-color: #77a4ba;
 	}
 
 	.nav-tabs li {
-		margin: 0 0 1.5rem 4rem;
+		margin: 0 .5rem .5rem -.5rem;
 	}
 
 	.nav-tabs a{
-		font-size: .5rem;
+		font-size: 1.25rem;
+		padding: 0;
+		margin: 0 1rem 0 .2em;
 	}
 
 	.logo {
-		transform: scale(.5);
+		transform: scale(.75);
 		padding: 0;
 		width: 100%;
 		margin: auto;
 		/*display: none;*/
 	}
+
+/************************************bio********************/
+
+#bio {
+	max-width: 550px;
+	margin: auto;
+}
+
 /*************************************albums***************************/
 
 	#music {
@@ -769,6 +760,9 @@
 	width: 100%;
 	}
 
+	.btn-success {
+		padding-top: 1.25fr;
+	}
 
 
 	/*************************band****************************/
@@ -780,7 +774,7 @@
 
 	#members {
 		background: transparent;
-		margin: auto;
+		margin-left: 2.25rem;
 	}
 
 	.col-sm-6 h3{
@@ -799,6 +793,14 @@
 		margin-bottom: 1rem;
 	}
 
+	#footer {
+		max-width: 400px;
+	}
+
+	.navbar-basic br{
+		display: block;
+	}
+
 	@supports (display: grid){
 
 		.nav-tabs {
@@ -811,7 +813,7 @@
 			transform: translate(-2rem, 14rem);
 		}
 	}
-}
+
 
 
 
