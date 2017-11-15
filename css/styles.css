@@ -648,23 +648,9 @@
 
 
 @media only screen and (max-width: 700px) {
-	body {
-		max-width: 400px;
-		margin-left: 0;
-		background-image: none;
-		background-color: black;
-		grid-template-columns: repeat(1, 2fr);
-		grid-template-areas: "header"
-						   "main"
-						   "nav"
-						   "nav"
-						   "bio"
-						   "bio"
-						   "sidebar"
-						   "sidebar"
-						   "sidebar"
-						   "news"
-						   "footer";
+
+	#bio, #members, #music, #news {
+		box-shadow: none;
 	}
 
 	.a2a_kit {
@@ -740,7 +726,7 @@
 
 	.front{
 		transform: translateX(-4rem);
-		min-width: 200px;
+		min-width: 400px;
 	}
 
 
@@ -768,11 +754,12 @@
 	/*************************band****************************/
 
 	.photo {
-		width: 100px;
+		width: 225px;
 		opacity: 1;
 	}
 
 	#members {
+		float: none;
 		background: transparent;
 		margin-left: 2.25rem;
 	}
@@ -781,11 +768,19 @@
 		padding-left: 1rem;
 	}
 
-	#members h3, #members h4, #members p{
+	.col-md-4 h3 {
+		transform: translatey(9rem);
+	}
+
+	#members p {
+		width: 200px;
+	}
+
+	#members h3, #members h4 {
 		text-shadow: 1px 1px black;
 		line-height: 1rem;
 		opacity: 1;
-		width: 200px;
+		width: 300px;
 		transition: none;
 	}
 
@@ -802,6 +797,25 @@
 	}
 
 	@supports (display: grid){
+
+		body {
+		max-width: 400px;
+		margin-left: 0;
+		background-image: none;
+		background-color: black;
+		grid-template-columns: repeat(1, 2fr);
+		grid-template-areas: "header"
+						   "main"
+						   "nav"
+						   "nav"
+						   "bio"
+						   "bio"
+						   "sidebar"
+						   "sidebar"
+						   "sidebar"
+						   "news"
+						   "footer";
+	}
 
 		.nav-tabs {
 			display: grid;
